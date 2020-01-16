@@ -1,9 +1,6 @@
-pragma solidity >=0.4.21 <=0.6.0;
+pragma solidity >=0.5.0 <=0.6.0;
 pragma experimental ABIEncoderV2;
-
-// contract Tender {
-//     constructor(uint _tenderID, string[] memory _requirments) public {}
-// }
+import "./Tender.sol";
 
 contract MainContract {
 
@@ -21,6 +18,7 @@ contract MainContract {
 		_;
 	}
 
+	/// Gives Bidder privileges to the given addresses
 	function approveBidder(address[] calldata _newBidder) external onlyAdmin {
 		for(uint i = 0; i < _newBidder.length ; ++i)
 		{
@@ -28,6 +26,7 @@ contract MainContract {
 		}
 	}
 
+	/// Gives Admin privileges to the given addresses
 	function approveAdmin(address[] calldata _newAdmin) external onlyAdmin {
 		for(uint i = 0; i < _newAdmin.length ; ++i)
 		{
@@ -35,7 +34,7 @@ contract MainContract {
 		}
 	}
 
-	/// @dev Creates a new tender contract
+	/// @dev Creates a new tender contract and returns its address
 	function createTender(uint _tenderID, uint _bidTime, string[] calldata _req) external onlyAdmin returns(address) {
 		require(Tenders[_tenderID ] == address(0), "A Tender already exists with the given tender ID");
 
@@ -51,6 +50,7 @@ contract MainContract {
 		return Tenders[_tenderID];
 	}
 
+	/// returns an array of all the tender contract's address deployed
 	function getAllTenders() external view returns(address[] memory) {
 	    address[] memory tender = new address[](tenderID.length);
 		for(uint i = 0; i < tenderID.length; ++i)
@@ -66,7 +66,8 @@ contract MainContract {
 	/// @dev Can be made more flexible
 	function getTendersByStatus(uint8 _mode) external view returns(address[] memory) {
 		address[] memory tender = new address[](tenderID.length);
-		for(uint i = 0, uint idx = 0; i < tenderID.length; ++i)
+		uint idx = 0;
+		for(uint i = 0; i < tenderID.length; ++i)
 		{
 			if ( (Tender(Tenders[tenderID[i]]).isActive()^_mode) == 1)	// isActive() to be implemented!!!
 			{
