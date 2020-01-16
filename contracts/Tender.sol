@@ -85,12 +85,14 @@ contract Tender {
 
 	function getBidByID(uint _bidNumber) external view returns(string[] memory) {
 		require(_bidNumber >=1 && _bidNumber <= bids.length,"Invalid Bid Number");
-		require(bids[_bidNumber].bidder == msg.sender || USER_TYPE[msg.sender] == privilege.admin);
-		return bids[_bidNumber].data;
+		require(bids[_bidNumber-1].bidder == msg.sender || USER_TYPE[msg.sender] == privilege.admin);
+		return bids[_bidNumber-1].data;
+	}
+
+	function getAllBids() external view onlyAdmin returns(Bid[] memory) {
+		return bids;
 	}
 
 	//function getMyBids() external view onlyBidder returns() {}
-	//function getAllBids() external view onlyAdmin returns() {}
-
 
 }
