@@ -82,7 +82,7 @@ contract Tender {
 	}
 
 	// Helper Function
-	function currentStatus() internal view returns(string memory) {
+	function currentStatus() public view returns(string memory) {
 		string[5] memory statusType = ["Open","Shipping","Payment","Closed","Cancel"];
 		return statusType[uint(status)];
 	}
@@ -123,7 +123,7 @@ contract Tender {
 		return true;
 	}
 
-	function getAllBids() external view onlyAdmin returns(Bid[] memory)
+	function getAllBids() external view returns(Bid[] memory)
 	{
 		// Bid[] memory tmpBid = new Bid[](bids.length);
 		// for(uint i = 0; i < bids.length; ++i)
