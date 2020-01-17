@@ -146,29 +146,9 @@ contract Tender {
 		}
 		return myBids;
 	}
+
+	function timeLeft() external view returns(uint) {
+		if (now >= endTime) return 0;
+		return endTime - now;
+	}
 }
-
-	// function addRequirement(string[] calldata _req) external onlyAdmin {
-	// 	require(req.length == 0,"Requirement already Set");
-	// 	require(_req.length >= 3,"Requirement cannot be empty");
-	// 	title = _req[0];
-	// 	desc = _req[1];
-	// 	for(uint i = 2; i < _req.length; i++)
-	// 	{
-	// 	    req.push(_req[i]);
-	// 	}
-	// }
-
-	// function makeBid(string[] memory _Data) public onlyBidder beforeEndTime {
- //        require(_Data.length > 0,"Bid cannot be empty");
-
- //        Bid storage newBid = bids[bids.length++];
- //        newBid.bidder = msg.sender;
-        
- //        for(uint i = 0; i < _Data.length; ++i)
- //        {
- //            newBid.data[newBid.data.length++] = _Data[i];
- //        }
-
-	// 	emit bidAlert(tenderID, bids.length, msg.sender);
-	// }
