@@ -39,13 +39,6 @@ router.post('/register', function(req, res) {
   });
 
   router.get('/me', VerifyToken,  function(req, res) {
-    // var token = req.headers['x-access-token'];
-    // if (!token) return res.status(401).send({ auth: false, message: 'No token provided.' });
-    
-    // jwt.verify(token, config.secret, function(err, decoded) {
-    //   if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });
-      
-    //   res.status(200).send(decoded);
     User.findById(req.userId, 
         {password: 0},
         function (err, user) {
@@ -73,6 +66,20 @@ router.post('/register', function(req, res) {
     });
     
   });
+
+  // UPDATES A SINGLE USER IN THE DATABASE
+router.post('/update', VerifyToken, function (req, res) {
+    User.findByIdAndUpdate(req.userId, 
+        {
+            location: req.body.location,
+            companyName: req.body.companyName,
+            phoneNumber: req.body.phoneNumber
+        },
+        {new: true}, function (err, user) {
+        if (err) return res.status(500).send("There was a problem updating the user.");
+        res.status(200).send("User details updated successfully.");
+    });
+});
 
   router.get('/logout', function(req, res) {
     res.status(200).send({ auth: false, token: null });
