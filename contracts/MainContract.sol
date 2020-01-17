@@ -72,7 +72,7 @@ contract MainContract {
 	/// _mode := 0 To return Active Tenders
 	/// _mode := 1 To return Closed Tenders
 	/// @dev Can be made more flexible
-	function getTendersByStatus(uint8 _mode) external view returns(address[] memory) {
+	function getTendersByStatus(uint _mode) external view returns(address[] memory) {
 		address[] memory tender = new address[](tenderID.length);
 		uint idx = 0;
 		for(uint i = 0; i < tenderID.length; ++i)
