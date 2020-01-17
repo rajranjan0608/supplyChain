@@ -123,14 +123,9 @@ contract Tender {
 		return true;
 	}
 
+	/// @dev Not Working with Web3
 	function getAllBids() external view returns(Bid[] memory)
 	{
-		// Bid[] memory tmpBid = new Bid[](bids.length);
-		// for(uint i = 0; i < bids.length; ++i)
-		// {
-		// 	tmpBid[i] = bids[i];
-		// }
-		// return tmpBid;
 		return bids;
 	}
 
