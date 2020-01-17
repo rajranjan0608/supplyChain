@@ -63,6 +63,11 @@ contract MainContract {
 		return tender;
 	}
 
+	/// Returns array of all Tender Id's used
+	function getAllTenderID() external view returns(uint[] memory){
+		return tenderID;
+	}
+
 	/// @param
 	/// _mode := 0 To return Active Tenders
 	/// _mode := 1 To return Closed Tenders
