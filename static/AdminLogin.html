@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+       <!-- Compiled and minified CSS -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+       <!-- Compiled and minified JavaScript -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+       <style>
+       .navbar {
+    position: absolute;
+    top: 0;
+    height: 10vh;
+  }
+  .navbar .brand-logo {
+    font-family: "Playfair Display", serif;
+  }
+  
+  .navbar .navbar-links {
+    font-family: "Cabin", sans-serif;
+  }
+  
+  .navbar .signin {
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  
+       
+       </style>
+</head>
+<body>
+        <nav class="navbar z-depth-0 yellow">
+                <div class="nav-wrapper valign-wrapper">
+                  <div class="container">
+                    <img src='./img//gail.jpg' alt='gail'  class='responsive-img' style="height:60px; margin-top:25px"/>
+           
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li>
+                        <Link
+                          class="navbar-links btn green grey-text text-lighten-4 z-depth-0 waves-effect waves-light signin"
+                          to='/client-login'
+                        >
+                          Client Login
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          class="navbar-links btn green grey-text text-lighten-4 z-depth-0 waves-effect waves-light signin"
+                          to='admin-login'
+                        >
+                          Admin Login
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+    <div class='grey lighten-3' style="height:100vh;overflow:hidden">
+        <div class='white' style="width:600px;margin-top:200px;margin-bottom:auto;margin-left:auto;margin-right:auto">
+        <div class='grey darken-3 center' style="padding:10px">
+            <h3 class='grey-text text-lighten-3'>Admin Login</h3>
+        </div>
+        <div style="padding:10px">
+        <div class="row">
+<form class="col s12">
+
+
+<div class="row">
+<div class="input-field col s12">
+  <input id="email" type="email" class="validate"/>
+  <label for="email">Username</label>
+</div>
+<div class="input-field col s12">
+  <input id="password" type="password" class="validate"/>
+  <label for="password">Password</label>
+</div>
+</div>
+</form>
+</div>
+<div class='center'> 
+<Link
+            class="navbar-links btn green grey-text text-lighten-4 z-depth-0 waves-effect waves-light signin"
+            to='admin-dashboard'
+          >
+            Submit
+          </Link>
+          </div>
+        </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.collapsible');
+      var instances = M.Collapsible.init(elems, {});
+  
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems, {});
+    });
+    });
+      </script>
+</body>
+</html>
