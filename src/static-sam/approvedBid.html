@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Track shipment - Procurement System (GAIL)</title>
+    <title>My bids - Procurement System (GAIL)</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="style2.css">
-    <link rel="stylesheet" href="shipping.css">
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
@@ -92,17 +91,39 @@
                     </div>
                 </div>
             </nav>
+
             <!-- /content goes here  -->
-            <h4>Shipment Status</h4>
-            <div class="line"></div>
-            <div class="row">   
-                <ol class="progtrckr" data-progtrckr-steps="5" style="width: 100%;">
-                    <li class="progtrckr-done">Order Processing</li><!--
-                 --><li class="progtrckr-done">Shipped</li><!--
-                 --><li class="progtrckr-done">On way</li><!--
-                 --><li class="progtrckr-todo">Delivered</li><!--
-                 --><li class="progtrckr-todo">Payment</li>
-                </ol>
+            <h4>My Bids</h4>
+            <div class="line" style="margin-top: 5px;"></div>
+            <div class="row">
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Tender name</th>
+                        <th scope="col">Details</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td><button type="button" class="btn btn-link"><a href="shipping.html">View details</a></button></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td><button type="button" class="btn btn-link"><a href="shipping.html">View details</a></button></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td><button type="button" class="btn btn-link"><a href="shipping.html">View details</a></button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+
             </div>
         </div>
     </div>
