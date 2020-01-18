@@ -1,0 +1,49 @@
+body{
+	background-image:url('./images/background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+h1{
+	color: white;
+	text-align : center;
+	font-size: 70px; 
+	text-align: center;
+}
+
+h2
+{
+	text-align: center;
+	font-size:50px;
+	margin-top: 150px;
+	font-family:sans-serif;
+}
+
+.box{
+	margin-left: 6px;
+	margin-right: 25px;
+	padding: 0px;
+}
+
+.sub-box{
+	width: 40%;
+	height: 80%;
+
+	margin-top : 50px;
+	margin-left: 50px;
+	background-position: center;
+	background-color: white;
+	border-radius: 100%;
+}
+
+#admin{
+	color: rgb(46,227,255);
+	background-image: url('./images/admin_2.png');
+	float: left;
+}
+
+#user{
+	color: rgb(211,80,174);
+	background-image: url('./images/user_2.jpg');
+	float: right;
+}
