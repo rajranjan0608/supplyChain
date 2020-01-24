@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+            .sidenavbar{
+            height: 90vh;
+            margin: 0 !important;
+            margin-top: 10vh !important;
+        }
+        .navbar {
+    position: absolute;
+    top: 0;
+    height: 10vh;
+  }
+  .navbar .brand-logo {
+    font-family: "Playfair Display", serif;
+  }
+  
+  .navbar .navbar-links {
+    font-family: "Cabin", sans-serif;
+  }
+  
+  .navbar .signin {
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  
+            </style>
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+       <!-- Compiled and minified CSS -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+       <!-- Compiled and minified JavaScript -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+       
+</head>
+<body>
+        <nav class="navbar z-depth-0 yellow">
+                <div class="nav-wrapper valign-wrapper">
+                  <div class="container">
+                    <img src='./img//gail.jpg' alt='gail'  class='responsive-img' style="height:60px; margin-top:25px"/>
+           
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li>
+                                    <a
+                                      class="navbar-links btn green grey-text text-lighten-4 z-depth-0 waves-effect waves-light signin"
+                                      to='/client-login'
+                                    >
+                                      Logout
+                                </a>
+                                  </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+              <div style="display: flex">
+              <div class="grey lighten-3" style="display: flex; flex-direction: column;flex: 1">
+
+                    <div class='sidenavbar grey lighten-3'>
+                            <nav class='z-depth-0'>
+                 <div class="nav-wrapper center  blue darken-2 z-depth-0" style="padding:'5px'">
+                 
+                  <h4 style="margin:0;padding:0">Admin Panel</h4>
+                 </div>
+               </nav>
+             
+             
+                  
+               <ul style="margin-top:0" class="collection">
+             
+                    <a href="#!" class="collection-item">Create Tender</a>
+                    <a href="#!" class="collection-item active">Tender List</a>
+                    <a href="#!" class="collection-item">Bids</a>
+                    <a href="#!" class="collection-item">Tender Details</a>       
+                            </ul>
+             
+             
+                         </div>
+                                </div>
+                      <div style="display:flex; flex-direction: column; flex: 3">
+        <header>
+            <h3>Create Tender</h3>
+        </header>
+        <main>
+        <div class="row">
+<form onSubmit={this.handleSubmit} class="col s12">
+<div class="row">
+<div class="input-field col s6">
+  <input onChange={this.handleChange} value={this.state.title} placeholder="Placeholder" id="title" type="text" class="validate"/>
+  <label for="title">Title</label>
+</div>
+
+</div>
+<div class="row">
+<div class="input-field col s6">
+  <input onChange={this.handleChange} value={this.state.id} placeholder="Placeholder" id="id" type="text" class="validate"/>
+  <label for="id">Id</label>
+</div>
+
+</div>
+<div class="row">
+<div class="input-field col s6">
+  <input onChange={this.handleChange} value={this.state.id} placeholder="Placeholder" id="bittime" type="text" class="validate"/>
+  <label for="bittime">Bid Time</label>
+</div>
+
+</div>
+<div class="row">
+<div class="input-field col s12">
+  <textarea onChange={this.handleChange} value={this.state.description} id="description" class="materialize-textarea"></textarea>
+  <label for="description">Description</label>
+</div>
+</div>
+<div class='row'>
+<div class="input-field col s6">
+  <input onChange={this.handleChange} value={this.state.product} placeholder="Placeholder" id="product" type="text" class="validate"/>
+  <label for="product">Product</label>
+</div>
+<div class="input-field col s6">
+  <input onChange={this.handleChange} value={this.state.qty} placeholder="Placeholder" id="qty" type="text" class="validate"/>
+  <label for="qty">Quantity</label>
+</div>
+</div>
+
+<button type='submit' class="waves-effect waves-light btn">Submit</button>
+</form>
+</div>
+        </main>
+    </div>
+</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.collapsible');
+      var instances = M.Collapsible.init(elems, {});
+  
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems, {});
+    });
+    });
+      </script>
+</body>
+</html>

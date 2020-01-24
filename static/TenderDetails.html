@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .sidenavbar{
+            height: 90vh;
+            margin: 0 !important;
+            margin-top: 10vh !important;
+        }
+        .navbar {
+    position: absolute;
+    top: 0;
+    height: 10vh;
+  }
+  .navbar .brand-logo {
+    font-family: "Playfair Display", serif;
+  }
+  
+  .navbar .navbar-links {
+    font-family: "Cabin", sans-serif;
+  }
+  
+  .navbar .signin {
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  
+            </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+       <!-- Compiled and minified CSS -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+       <!-- Compiled and minified JavaScript -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+       
+</head>
+<body>
+        <nav class="navbar z-depth-0 yellow">
+                <div class="nav-wrapper valign-wrapper">
+                  <div class="container">
+                    <img src='./img//gail.jpg' alt='gail'  class='responsive-img' style="height:60px; margin-top:25px"/>
+           
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li>
+                                    <a
+                                      class="navbar-links btn green grey-text text-lighten-4 z-depth-0 waves-effect waves-light signin"
+                                      to='/client-login'
+                                    >
+                                      Logout
+                                </a>
+                                  </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+              <div style="display: flex">
+              <div class="grey lighten-3" style="display: flex; flex-direction: column;flex: 1">
+
+                    <div class='sidenavbar grey lighten-3'>
+                            <nav class='z-depth-0'>
+                 <div class="nav-wrapper center  blue darken-2 z-depth-0" style="padding:'5px'">
+                 
+                  <h4 style="margin:0;padding:0">Admin Panel</h4>
+                 </div>
+               </nav>
+             
+             
+                 
+               <ul style="margin-top:0" class="collection">
+             
+                    <a href="#!" class="collection-item">Create Tender</a>
+                    <a href="#!" class="collection-item active">Tender List</a>
+                    <a href="#!" class="collection-item">Bids</a>
+                    <a href="#!" class="collection-item">Tender Details</a>       
+                            </ul>
+             
+                         </div>
+                                </div>
+                      <div style="display:flex; flex-direction: column; flex: 3">
+        <header>
+            <h3>Tender Details</h3>
+            <h4>Title</h4>
+        </header>
+        <main>
+          <p>Description</p>
+          <p>Product</p>
+          <p>Quantity</p>
+        
+           
+           <section>
+        <header><h3>Biddings</h3></header>
+        <main>
+        <table>
+<thead>
+  <tr>
+      <th>Bidder</th>
+      <th>Product ID</th>
+      <th>Price</th>
+  </tr>
+</thead>
+
+<tbody>
+  <tr>
+    <td>Alvin</td>
+    <td>Eclair</td>
+    <td>$0.87</td>
+  </tr>
+  <tr>
+    <td>Alan</td>
+    <td>Jellybean</td>
+    <td>$3.76</td>
+  </tr>
+  <tr>
+    <td>Jonathan</td>
+    <td>Lollipop</td>
+    <td>$7.00</td>
+  </tr>
+</tbody>
+</table>
+        </main>
+    </section>
+    <section>
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Extend Time</a>
+
+<div id="modal1" class="modal">
+<div class="modal-content">
+<h4>Seconds To Extend</h4>
+<form>
+<div class="input-field col s6">
+  <input placeholder="Placeholder" id="title" type="text" class="validate"/>
+  <label for="title">Title</label>
+</div>
+<a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+</form>
+</div>
+
+</div>
+</div> 
+    </section>
+
+          
+        </main>
+    </div>
+</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.collapsible');
+      var instances = M.Collapsible.init(elems, {});
+  
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems, {});
+    });
+    });
+      </script>
+</body>
+</html>
