@@ -174,9 +174,9 @@ contract Tender {
 	}
 
 
-	// SuplyChain Section
+	// SupplyChain Section
 
-	/// Records a transition made in suppy-chain
+	/// Records a transition made in supply-chain
 	function transferOwnership(address _newOwner, string calldata _memo) external {
 		require(status == Status.shipping,"Not in shipment phase");
 
@@ -234,7 +234,7 @@ contract Tender {
 		return history.length;
 	}
 
-	/// Returns the record of _id-TH transition
+	/// Returns the record of id-TH transition
 	function getHistoryByID(uint _id) external view returns(Step memory) {
 		require(_id >= 1 && _id <= history.length, "Invalid history id");
 		return history[_id-1];

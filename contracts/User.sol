@@ -1,7 +1,7 @@
 pragma solidity >=0.4.0 <0.6.0;
 
 contract User{
-	// 0 -> Normarl User
+	// 0 -> Normal User
 	// 1 -> Bidder
 	// 2 -> Admin
 	mapping(address => uint8) userType; // Stores the privilege of users
